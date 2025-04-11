@@ -1,0 +1,17 @@
+name: Run autotests
+
+on:
+  workflow_dispatch:
+    inputs:
+      deployment_target:
+        description: select tests to run
+        required: true
+        type: choice
+        default: all
+        options:
+          - all
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    name: Tests
+    steps:
